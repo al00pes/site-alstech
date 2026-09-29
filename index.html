@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-user-role="visitor">
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
   <header>
     <div class="container header-content">
@@ -72,30 +72,51 @@
     <section id="projetos" class="section-padding bg-soft-dark">
       <div class="container">
         <span class="section-kicker reveal hidden">Na prática</span><h2 class="reveal hidden">Soluções desenvolvidas para problemas reais</h2>
-        <p class="section-intro reveal hidden">Conheça exemplos de processos que ganharam mais organização, controle e agilidade.</p>
+        <p class="section-intro reveal hidden">Explore os projetos e abra os detalhes apenas daqueles que despertarem seu interesse.</p>
 
-        <article class="project-item reveal hidden" data-carousel-id="churn">
-          <div class="project-copy"><span class="project-tag">Mineração</span><h3>Automação da gestão de documentos</h3>
-            <dl class="case-details"><div><dt>Desafio</dt><dd>Acompanhar documentos, responsáveis e prazos em controles manuais.</dd></div><div><dt>Solução</dt><dd>Ambiente centralizado para visualizar a situação documental da operação.</dd></div><div><dt>Benefício</dt><dd>Mais organização, menos retrabalho e identificação rápida de pendências.</dd></div></dl>
+        <div class="projects-carousel reveal hidden" aria-label="Projetos realizados">
+          <div class="projects-toolbar">
+            <p><strong id="project-current">1</strong> de <span id="project-total">3</span> projetos</p>
+            <div class="projects-navigation">
+              <button class="project-nav project-prev" type="button" aria-label="Ver projetos anteriores"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+              <button class="project-nav project-next" type="button" aria-label="Ver próximos projetos"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+            </div>
           </div>
-          <div class="carousel"><div class="carousel-window"><div class="carousel-track" id="churn-track"><div class="carousel-slide"><video class="dashboard-media" autoplay muted loop playsinline preload="metadata" aria-label="Demonstração do dashboard de gestão de documentos"><source src="imagem/mineradora_ipe/apresentacao_dashboard.mp4" type="video/mp4"></video></div></div></div></div>
-        </article>
 
-        <article class="project-item reveal hidden" data-carousel-id="logistica">
-          <div class="project-copy"><span class="project-tag">Varejo</span><h3>Controle de estoque e vendas</h3>
-            <dl class="case-details"><div><dt>Desafio</dt><dd>Controles separados e dificuldade para acompanhar produtos e vendas.</dd></div><div><dt>Solução</dt><dd>Sistema centralizado para cadastro, estoque, movimentações e vendas.</dd></div><div><dt>Benefício</dt><dd>Mais controle da operação, menos erros manuais e acesso rápido às informações.</dd></div></dl>
-          </div>
-          <div class="carousel"><button class="carousel-control prev" type="button" data-target="logistica" aria-label="Imagem anterior"><i class="fas fa-chevron-left"></i></button><div class="carousel-window"><div class="carousel-track" id="logistica-track"><div class="carousel-slide"><img src="imagem/sistema_estoque/catalogo1.png" alt="Tela de cadastro e controle de produtos" class="dashboard-media" loading="lazy"></div><div class="carousel-slide"><img src="imagem/sistema_estoque/vendas.png" alt="Tela de registro e acompanhamento de vendas" class="dashboard-media" loading="lazy"><div class="carousel-slide"><img src="imagem/sistema_estoque/" alt="Tela de registr e acompanhamento de vendas" class="dashboard-media" loading="lazy"></div></div></div></div><button class="carousel-control next" type="button" data-target="logistica" aria-label="Próxima imagem"><i class="fas fa-chevron-right"></i></button></div>
-        </article>
+          <div class="projects-viewport" tabindex="0">
+            <div class="projects-track">
+              <article class="project-card is-selected" data-project="documentos" aria-label="Projeto selecionado: Automação da gestão de documentos">
+                <div class="project-card-media"><video autoplay muted loop playsinline preload="metadata" aria-label="Demonstração da gestão de documentos"><source src="imagem/mineradora_ipe/apresentacao_dashboard.mp4" type="video/mp4"></video><span class="project-status status-complete"><i class="fas fa-circle-check" aria-hidden="true"></i> Concluído</span></div>
+                <div class="project-card-body"><span class="project-tag">Mineração</span><h3>Automação da gestão de documentos</h3><p>Documentos, responsáveis e prazos reunidos em um único ambiente.</p><button class="project-details-button" type="button" data-project="documentos">Ver detalhes <i class="fas fa-arrow-right" aria-hidden="true"></i></button></div>
+              </article>
 
-        <article class="project-item reveal hidden" data-carousel-id="saas">
-          <div class="project-copy"><span class="project-tag">fast Food</span><h3>Gestão Inteligente da Produção de Pizzas</h3>
-            <dl class="case-details"><div><dt>Desafio</dt><dd>Falta de integração entre estoque, produção, CMV e entregas, comprometendo a eficiência da pizzaria.</dd></div><div><dt>Solução</dt><dd>Controle estoque, produção, CMV e entregas, reduzindo desperdícios e aumentando a eficiência operacional.</dd></div><div><dt>Benefício</dt><dd>Visão atualizada e identificação rápida de atrasos, custos e pontos de atenção.</dd></div></dl>
+              <article class="project-card" data-project="estoque" aria-label="Projeto: Controle de estoque e vendas">
+                <div class="project-card-media"><img src="imagem/sistema_estoque/catalogo1.png" alt="Tela do sistema de cadastro e controle de produtos" loading="lazy"><span class="project-status status-complete"><i class="fas fa-circle-check" aria-hidden="true"></i> Concluído</span></div>
+                <div class="project-card-body"><span class="project-tag">Varejo</span><h3>Controle de estoque e vendas</h3><p>Operação centralizada para reduzir erros e agilizar o acesso aos dados.</p><button class="project-details-button" type="button" data-project="estoque">Ver detalhes <i class="fas fa-arrow-right" aria-hidden="true"></i></button></div>
+              </article>
+
+              <article class="project-card" data-project="pizzaria" aria-label="Projeto: Gestão inteligente da produção de pizzas">
+                <div class="project-card-media"><img src="imagem/estoque_food/dash.png" alt="Dashboard da operação da pizzaria" loading="lazy"><span class="project-status status-complete"><i class="fas fa-circle-check" aria-hidden="true"></i> Concluído</span></div>
+                <div class="project-card-body"><span class="project-tag">Fast food</span><h3>Gestão inteligente da produção</h3><p>Estoque, produção, CMV e entregas acompanhados de forma integrada.</p><button class="project-details-button" type="button" data-project="pizzaria">Ver detalhes <i class="fas fa-arrow-right" aria-hidden="true"></i></button></div>
+              </article>
+            </div>
           </div>
-          <div class="carousel"><button class="carousel-control prev" type="button" data-target="saas" aria-label="Imagem anterior"><i class="fas fa-chevron-left"></i></button><div class="carousel-window"><div class="carousel-track" id="saas-track"><div class="carousel-slide"><img src="imagem/estoque_food/producao.png" alt="Visão geral do dashboard de projetos e obras" class="dashboard-media" loading="lazy"></div><div class="carousel-slide"><img src="imagem/estoque_food/dash.png" alt="Indicadores financeiros do dashboard de projetos" class="dashboard-media" loading="lazy"></div><div class="carousel-slide"><img src="imagem/estoque_food/insumo.png" alt="Cronograma e status dos projetos" class="dashboard-media" loading="lazy"><div class="carousel-slide"><img src="imagem/estoque_food/producao.png" alt="Cronogram e status dos projetos" class="dashboard-media" loading="lazy"></div></div></div></div><button class="carousel-control next" type="button" data-target="saas" aria-label="Próxima imagem"><i class="fas fa-chevron-right"></i></button></div>
-        </article>
+          <div class="project-dots" role="tablist" aria-label="Selecionar projeto"></div>
+          <p class="swipe-hint"><i class="fas fa-arrows-left-right" aria-hidden="true"></i> Deslize para explorar</p>
+        </div>
       </div>
     </section>
+
+    <dialog id="project-dialog" class="project-dialog" aria-labelledby="project-dialog-title">
+      <div class="project-dialog-shell">
+        <button class="project-dialog-close" type="button" aria-label="Fechar detalhes"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+        <div id="project-dialog-content"></div>
+        <div class="approval-actions" hidden>
+          <p><strong>Decisão do aprovador</strong><span id="approval-feedback" role="status" aria-live="polite"></span></p>
+          <div><button class="btn approval-reject" type="button"><i class="fas fa-xmark" aria-hidden="true"></i> Rejeitar</button><button class="btn btn-primary approval-approve" type="button"><i class="fas fa-check" aria-hidden="true"></i> Aprovar</button></div>
+        </div>
+      </div>
+    </dialog>
 
     <section id="metodologia" class="section-padding">
       <div class="container"><span class="section-kicker reveal hidden">Como trabalhamos</span><h2 class="reveal hidden">Da necessidade à solução, sem complicação</h2>
@@ -106,7 +127,7 @@
 
     <section id="contato" class="section-padding bg-dark">
       <div class="container contact-layout"><div class="contact-copy reveal hidden"><span class="section-kicker">Vamos conversar</span><h2>Qual processo está tomando tempo da sua equipe?</h2><p>Conte como sua empresa trabalha hoje. Podemos identificar oportunidades de digitalização, automação e melhoria da gestão.</p><p class="contact-note"><i class="fas fa-comments"></i> Você não precisa ter a solução pronta. Começamos entendendo o problema.</p></div>
-        <form id="contact-form" class="reveal hidden" action="https://formspree.io/f/xpwkawgd" method="post"><div><label for="nome">Nome</label><input type="text" id="nome" name="Nome" autocomplete="name" required></div><div><label for="empresa">Empresa</label><input type="text" id="empresa" name="Empresa" autocomplete="organization"></div><div><label for="email">E-mail</label><input type="email" id="email" name="Email" autocomplete="email" required></div><div><label for="mensagem">Qual processo você gostaria de melhorar?</label><textarea id="mensagem" name="Mensagem" required></textarea></div><button type="submit" class="btn btn-primary">Quero conversar sobre minha operação</button><p id="form-message" class="message-status" role="status" aria-live="polite"></p></form>
+        <form id="contact-form" class="reveal hidden" action="https://formspree.io/f/xpwkawgd" method="post"><div><label for="nome">Nome</label><input type="text" id="nome" name="Nome" autocomplete="name" required></div><div><label for="empresa">Empresa</label><input type="text" id="empresa" name="Empresa" autocomplete="organization"></div><div><label for="email">E-mail</label><input type="email" id="email" name="Email" autocomplete="email"></div><div><label for="celular">Celular</label><input type="tel" id="celular" name="Celular" autocomplete="tel" inputmode="tel" required></div><div><label for="mensagem">Qual processo você gostaria de melhorar?</label><textarea id="mensagem" name="Mensagem" required></textarea></div><button type="submit" class="btn btn-primary">Quero conversar sobre minha operação</button><p id="form-message" class="message-status" role="status" aria-live="polite"></p></form>
       </div>
     </section>
   </main>
